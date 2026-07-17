@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import NetworkGraphic from "@/components/NetworkGraphic";
 import { blogPosts } from "@/lib/blog";
 import { siteConfig } from "@/lib/site-config";
 
@@ -63,8 +64,15 @@ export default function BlogIndexPage() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group p-6 bg-brand-800 border border-brand-700 hover:border-accent/50 transition-colors duration-300 flex flex-col"
+              className="group bg-brand-800 border border-brand-700 hover:border-accent/50 transition-colors duration-300 flex flex-col overflow-hidden"
             >
+              <div className="relative h-28 bg-brand-900">
+                <NetworkGraphic
+                  variant="compact"
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+              <div className="p-6 flex flex-col flex-1">
               <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
                 <span className="flex items-center gap-1">
                   <Calendar size={12} />
@@ -84,6 +92,7 @@ export default function BlogIndexPage() {
               <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent group-hover:gap-2 transition-all">
                 Leer artículo <ArrowRight size={14} />
               </span>
+              </div>
             </Link>
           ))}
         </div>

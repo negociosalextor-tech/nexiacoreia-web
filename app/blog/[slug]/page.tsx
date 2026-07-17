@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Calendar, Clock } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WhatsAppCta from "@/components/WhatsAppCta";
+import NetworkGraphic from "@/components/NetworkGraphic";
 import { blogPosts, getBlogPostBySlug } from "@/lib/blog";
 import { siteConfig } from "@/lib/site-config";
 
@@ -86,6 +87,10 @@ export default async function BlogPostPage({ params }: Props) {
             { label: post.title },
           ]}
         />
+
+        <div className="relative overflow-hidden bg-brand-800 border border-brand-700 h-40 md:h-56 mb-8">
+          <NetworkGraphic className="absolute inset-0 w-full h-full" />
+        </div>
 
         <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
           <span className="flex items-center gap-1">

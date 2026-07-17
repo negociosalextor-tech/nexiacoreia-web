@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { services, featuredServiceSlugs } from "@/lib/services";
+import NetworkGraphic from "@/components/NetworkGraphic";
 
 const featured = featuredServiceSlugs
   .map((slug) => services.find((s) => s.slug === slug))
@@ -31,21 +32,25 @@ export default function HomeServices() {
             return (
               <div
                 key={service.slug}
-                className="group p-6 bg-brand-800 border border-brand-700 hover:border-accent/50 transition-colors duration-300"
+                className="group relative overflow-hidden p-6 bg-brand-800 border border-brand-700 hover:border-accent/50 transition-colors duration-300"
               >
-                <div className="w-12 h-12 bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                <NetworkGraphic
+                  variant="compact"
+                  className="absolute -top-6 -right-6 w-32 h-32 opacity-40 pointer-events-none"
+                />
+                <div className="relative w-12 h-12 bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                   <Icon className="text-accent" size={24} />
                 </div>
-                <h3 className="text-lg font-semibold font-[family-name:var(--font-heading)] text-white mb-2">
+                <h3 className="relative text-lg font-semibold font-[family-name:var(--font-heading)] text-white mb-2">
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                <p className="relative text-sm text-gray-400 leading-relaxed mb-4">
                   {service.description}
                 </p>
                 {service.hasDetailPage && (
                   <Link
                     href={`/servicios/${service.slug}`}
-                    className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-hover transition-colors"
+                    className="relative inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-hover transition-colors"
                   >
                     Conocer más <ArrowRight size={14} />
                   </Link>

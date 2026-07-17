@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Bot, ArrowRight, Calendar } from "lucide-react";
+import NetworkGraphic from "@/components/NetworkGraphic";
 
 const stats = [
   { value: "12+", label: "Soluciones IA" },
@@ -82,8 +83,9 @@ export default function Hero() {
             <div className="relative w-full max-w-md aspect-square">
               <div className="absolute inset-0 border-2 border-accent/20 rotate-6" />
               <div className="absolute inset-4 border border-brand-700" />
-              <div className="absolute inset-8 bg-gradient-to-br from-brand-700 to-brand-900 flex items-center justify-center">
-                <div className="text-center space-y-4">
+              <div className="absolute inset-8 bg-gradient-to-br from-brand-700 to-brand-900 flex items-center justify-center overflow-hidden">
+                <NetworkGraphic className="absolute inset-0 w-full h-full" />
+                <div className="relative text-center space-y-4">
                   <div className="w-20 h-20 mx-auto bg-accent/20 flex items-center justify-center">
                     <Bot className="text-accent" size={40} />
                   </div>
