@@ -24,7 +24,6 @@ export default function Faq() {
     <section id="faq" className="py-24 bg-brand-800">
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <div className="container mx-auto px-4">

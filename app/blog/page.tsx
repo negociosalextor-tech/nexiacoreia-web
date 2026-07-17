@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { blogPosts } from "@/lib/blog";
 import { siteConfig } from "@/lib/site-config";
 
-const title = "Blog | NexiaCore IA";
+const title = "Blog";
 const description =
   "Artículos sobre inteligencia artificial aplicada a empresas y gobiernos en Chile y Latinoamérica: automatización, costos, implementación y buenas prácticas.";
 

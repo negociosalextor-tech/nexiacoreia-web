@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { services } from "@/lib/services";
 import { siteConfig } from "@/lib/site-config";
 
-const title = "Servicios de Inteligencia Artificial | NexiaCore IA";
+const title = "Servicios de Inteligencia Artificial";
 const description =
   "12 soluciones de inteligencia artificial para empresas y gobiernos en Chile y Latinoamérica: automatización, chatbots, gestión documental, analítica de datos y más.";
 

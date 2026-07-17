@@ -21,7 +21,7 @@ export const servicePages: ServicePageContent[] = [
   {
     slug: "gestion-documental-ia",
     metaTitle:
-      "Gestión Documental con IA en Chile | NexiaCore IA",
+      "Gestión Documental con IA en Chile",
     metaDescription:
       "Clasificación, extracción y digitalización inteligente de documentos para empresas y organismos públicos en Chile. Reduzca el trabajo manual y el riesgo de error.",
     eyebrow: "Gestión Documental",
@@ -55,7 +55,7 @@ export const servicePages: ServicePageContent[] = [
   },
   {
     slug: "automatizacion-procesos",
-    metaTitle: "Automatización de Procesos con IA | NexiaCore IA",
+    metaTitle: "Automatización de Procesos con IA",
     metaDescription:
       "Automatizamos procesos manuales y repetitivos con inteligencia artificial para empresas en Chile y Latinoamérica. Implementación ágil, integrada a sus sistemas actuales.",
     eyebrow: "Automatización Inteligente",
@@ -88,7 +88,7 @@ export const servicePages: ServicePageContent[] = [
   },
   {
     slug: "chatbots-empresas",
-    metaTitle: "Chatbots Inteligentes para Empresas | NexiaCore IA",
+    metaTitle: "Chatbots Inteligentes para Empresas",
     metaDescription:
       "Asistentes virtuales con IA para atención al cliente y soporte interno en Chile y Latinoamérica. Disponibles en WhatsApp y web, integrados a sus sistemas.",
     eyebrow: "Chatbots Inteligentes",
@@ -121,7 +121,7 @@ export const servicePages: ServicePageContent[] = [
   },
   {
     slug: "ia-para-gobierno",
-    metaTitle: "IA para Gobierno y Sector Público | NexiaCore IA",
+    metaTitle: "IA para Gobierno y Sector Público",
     metaDescription:
       "Soluciones de inteligencia artificial para organismos públicos en Chile y Latinoamérica: atención ciudadana, gestión de trámites y transparencia digital.",
     eyebrow: "Sector Público",
@@ -154,7 +154,7 @@ export const servicePages: ServicePageContent[] = [
   },
   {
     slug: "procesamiento-facturas",
-    metaTitle: "Procesamiento Inteligente de Facturas | NexiaCore IA",
+    metaTitle: "Procesamiento Inteligente de Facturas",
     metaDescription:
       "Automatización del ciclo de facturación con IA para empresas en Chile: reconocimiento óptico, validación de datos e integración contable.",
     eyebrow: "Procesamiento de Facturas",

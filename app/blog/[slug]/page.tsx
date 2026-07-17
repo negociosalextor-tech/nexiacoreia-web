@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `${siteConfig.url}/blog/${slug}`;
 
   return {
-    title: `${post.title} | Blog NexiaCore IA`,
+    title: post.title,
     description: post.metaDescription,
     alternates: { canonical: url },
     openGraph: {
@@ -76,7 +76,6 @@ export default async function BlogPostPage({ params }: Props) {
     <main className="min-h-screen bg-brand-900 pt-32 pb-24">
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
       <article className="container mx-auto px-4 max-w-3xl">
