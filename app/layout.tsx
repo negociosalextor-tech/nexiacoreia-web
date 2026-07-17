@@ -1,7 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { buildOrganizationJsonLd } from "@/lib/json-ld";
+import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -18,10 +22,39 @@ const openSans = Open_Sans({
   display: "swap",
 });
 
+const title = "NexiaCore IA - Inteligencia Aplicada para la Transformación";
+const description = siteConfig.description;
+
 export const metadata: Metadata = {
-  title: "NexiaCore IA - Inteligencia Aplicada para la Transformación",
-  description:
-    "NexiaCore IA - Soluciones de Inteligencia Artificial para empresas y gobiernos en Chile y Latinoamérica. Automatización, chatbots, analítica de datos y transformación digital.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: title,
+    template: "%s | NexiaCore IA",
+  },
+  description,
+  alternates: { canonical: siteConfig.url },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title,
+    description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    type: "website",
+    locale: "es_CL",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
+  verification: {
+    google: "{{GSC_VERIFICATION_CODE}}",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -29,6 +62,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationJsonLd = buildOrganizationJsonLd();
+
   return (
     <html
       lang="es"
@@ -36,9 +71,16 @@ export default function RootLayout({
       className={`${montserrat.variable} ${openSans.variable}`}
     >
       <body>
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppFloatingButton />
+        <GoogleAnalytics />
       </body>
     </html>
   );
