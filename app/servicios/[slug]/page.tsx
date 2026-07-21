@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, CircleCheck } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import WhatsAppCta from "@/components/WhatsAppCta";
+import NetworkGraphic from "@/components/NetworkGraphic";
 import { getServicePageContent, servicePages } from "@/lib/service-content";
 import { getServiceBySlug } from "@/lib/services";
 import { siteConfig } from "@/lib/site-config";
@@ -64,6 +65,10 @@ export default async function ServiceDetailPage({ params }: Props) {
             { label: content.h1 },
           ]}
         />
+
+        <div className="relative overflow-hidden bg-brand-800 border border-brand-700 h-40 md:h-56 mb-8">
+          <NetworkGraphic className="absolute inset-0 w-full h-full" />
+        </div>
 
         <div className="flex items-center gap-3 mb-4">
           {Icon && (

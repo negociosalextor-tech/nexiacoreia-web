@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CircleCheck, Shield, Users, FileCheck, Globe } from "lucide-react";
+import NetworkGraphic from "@/components/NetworkGraphic";
 
 const checklist = [
   "Atención ciudadana automatizada con chatbots multicanal",
@@ -78,22 +79,25 @@ export default function Gobierno() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {pillars.map((pillar) => {
-              const Icon = pillar.icon;
-              return (
-                <div
-                  key={pillar.title}
-                  className="p-6 bg-brand-700/50 border border-brand-700 space-y-3"
-                >
-                  <Icon className="text-accent" size={32} />
-                  <h3 className="font-semibold font-[family-name:var(--font-heading)] text-white">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-sm text-gray-400">{pillar.description}</p>
-                </div>
-              );
-            })}
+          <div className="relative">
+            <NetworkGraphic className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" />
+            <div className="relative grid grid-cols-2 gap-4">
+              {pillars.map((pillar) => {
+                const Icon = pillar.icon;
+                return (
+                  <div
+                    key={pillar.title}
+                    className="p-6 bg-brand-700/50 border border-brand-700 space-y-3"
+                  >
+                    <Icon className="text-accent" size={32} />
+                    <h3 className="font-semibold font-[family-name:var(--font-heading)] text-white">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-sm text-gray-400">{pillar.description}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

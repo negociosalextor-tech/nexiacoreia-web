@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import NetworkGraphic from "@/components/NetworkGraphic";
 import { services } from "@/lib/services";
 import { siteConfig } from "@/lib/site-config";
 
@@ -54,21 +55,25 @@ export default function ServiciosIndexPage() {
             const Icon = service.icon;
             const card = (
               <>
-                <div className="w-12 h-12 bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                <NetworkGraphic
+                  variant="compact"
+                  className="absolute -top-6 -right-6 w-32 h-32 opacity-30 pointer-events-none"
+                />
+                <div className="relative w-12 h-12 bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                   <Icon className="text-accent" size={24} />
                 </div>
-                <h2 className="text-lg font-semibold font-[family-name:var(--font-heading)] text-white mb-2">
+                <h2 className="relative text-lg font-semibold font-[family-name:var(--font-heading)] text-white mb-2">
                   {service.title}
                 </h2>
-                <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                <p className="relative text-sm text-gray-400 leading-relaxed mb-4">
                   {service.description}
                 </p>
                 {service.hasDetailPage ? (
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent group-hover:gap-2 transition-all">
+                  <span className="relative inline-flex items-center gap-1 text-sm font-semibold text-accent group-hover:gap-2 transition-all">
                     Conocer más <ArrowRight size={14} />
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-gray-500">
+                  <span className="relative inline-flex items-center gap-1 text-sm font-semibold text-gray-500">
                     Página de detalle próximamente
                   </span>
                 )}
@@ -79,14 +84,14 @@ export default function ServiciosIndexPage() {
               <Link
                 key={service.slug}
                 href={`/servicios/${service.slug}`}
-                className="group p-6 bg-brand-800 border border-brand-700 hover:border-accent/50 transition-colors duration-300"
+                className="group relative overflow-hidden p-6 bg-brand-800 border border-brand-700 hover:border-accent/50 transition-colors duration-300"
               >
                 {card}
               </Link>
             ) : (
               <div
                 key={service.slug}
-                className="group p-6 bg-brand-800 border border-brand-700"
+                className="group relative overflow-hidden p-6 bg-brand-800 border border-brand-700"
               >
                 {card}
               </div>

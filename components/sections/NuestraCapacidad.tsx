@@ -1,4 +1,5 @@
 import { Search, Blocks, Rocket, ChartLine, Zap, Megaphone, Activity, Coins, Lock } from "lucide-react";
+import NetworkGraphic from "@/components/NetworkGraphic";
 
 const realProjects = [
   {
@@ -120,21 +121,25 @@ export default function NuestraCapacidad() {
               return (
                 <div
                   key={project.title}
-                  className="p-6 bg-brand-800 border border-brand-700"
+                  className="relative overflow-hidden p-6 bg-brand-800 border border-brand-700"
                 >
-                  <div className="flex items-center gap-2 mb-4">
+                  <NetworkGraphic
+                    variant="compact"
+                    className="absolute -top-6 -right-6 w-32 h-32 opacity-30 pointer-events-none"
+                  />
+                  <div className="relative flex items-center gap-2 mb-4">
                     <Icon className="text-accent" size={16} />
                     <span className="text-xs text-accent font-semibold uppercase tracking-wider">
                       {project.sector}
                     </span>
                   </div>
-                  <h4 className="text-lg font-semibold font-[family-name:var(--font-heading)] text-white mb-2">
+                  <h4 className="relative text-lg font-semibold font-[family-name:var(--font-heading)] text-white mb-2">
                     {project.title}
                   </h4>
-                  <p className="text-sm text-gray-400 mb-4">
+                  <p className="relative text-sm text-gray-400 mb-4">
                     {project.description}
                   </p>
-                  <div className="flex items-start gap-2 pt-4 border-t border-brand-700">
+                  <div className="relative flex items-start gap-2 pt-4 border-t border-brand-700">
                     <span className="text-sm font-semibold text-accent">
                       {project.result}
                     </span>
